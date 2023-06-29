@@ -23,12 +23,25 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>Descrição</th>
                     <th>Código de Barras</th>
                     <th>Preço</th>
                     <th>Editar</th>
                 </tr>
             </thead>
             <tbody>
+                <tr th:each="produto : ${listaDeProdutos}">
+                    <td th:texts="${produto.id}"></td>
+                    <td th:texts="${produto.nome}"></td>
+                    <td th:texts="${produto.descricao}"></td>
+                    <td th:texts="${produto.codigoBarras}"></td>
+                    <td th:texts="${#numbers.formatCurrency(produto.preco)}"></td>
+                    <td>
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-edit ml-2"></i>
+                        </a>
+                    </td>
+                </tr>
                 
             </tbody>
         </table>
